@@ -195,6 +195,7 @@ function Nav() {
           </div>
         ))}
       </div>
+      </div>
     </div>
   );
 }
