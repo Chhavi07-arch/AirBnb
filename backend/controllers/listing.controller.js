@@ -56,9 +56,9 @@ export const findListing= async (req,res) => {
         }
         return res.status(200).json(listing)
     } catch (error) {
-       return res.status(500).json(`findListing error ${error}`)
+       return res.status(500).json({message:`findListing error ${error}`})
     }
-    
+
 }
 export const updateListing = async (req,res) => {
     try {
@@ -99,6 +99,11 @@ export const deleteListing = async (req,res) => {
     try {
         let {id} = req.params
         let listing = await Listing.findByIdAndDelete(id)
+
+        if(!listing){
+            return res.status(404).json({message:"listing not found"})
+        }
+
         let user = await User.findByIdAndUpdate(listing.host,{
             $pull:{listing:listing._id}
         },{new:true})
@@ -109,7 +114,7 @@ export const deleteListing = async (req,res) => {
     } catch (error) {
         return res.status(500).json({message:`DeleteListing Error ${error}`})
     }
-    
+
 }
 
 export const ratingListing = async (req, res) => {
