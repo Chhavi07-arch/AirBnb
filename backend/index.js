@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
     origin:function(origin, callback){
-        let allowedOrigins = ["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "https://air-bnb-frontend-zapx16ojo-chhavis-projects-e5f24557.vercel.app", "https://air-bnb-frontend-5x60vq9g7-chhavis-projects-e5f24557.vercel.app"]
+        let allowedOrigins = ["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "https://air-bnb-frontend-zapx16ojo-chhavis-projects-e5f24557.vercel.app", "https://air-bnb-frontend-5x60vq9g7-chhavis-projects-e5f24557.vercel.app", "https://air-bnb-frontend-sand.vercel.app"]
         if(!origin || allowedOrigins.includes(origin)){
             callback(null, true)
         } else {
@@ -24,7 +24,8 @@ app.use(cors({
     },
     credentials:true,
     allowedHeaders:["Content-Type", "Authorization"],
-    methods:["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    methods:["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    maxAge:86400
 }))
 
 app.get("/", (req, res) => {
