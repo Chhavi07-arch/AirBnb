@@ -14,15 +14,22 @@ let app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "https://air-bnb-frontend-zapx16ojo-chhavis-projects-e5f24557.vercel.app"],
+    origin:["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "https://air-bnb-frontend-zapx16ojo-chhavis-projects-e5f24557.vercel.app", "https://air-bnb-frontend-5x60vq9g7-chhavis-projects-e5f24557.vercel.app"],
     credentials:true
 }))
+
+app.get("/", (req, res) => {
+    res.status(200).json({message: "AirBnb Clone Backend is Running"})
+})
 
 app.use("/api/auth", authRouter )
 app.use("/api/user", userRouter )
 app.use("/api/listing",listingRouter )
 app.use("/api/booking",bookingRouter )
 
+app.use((req, res) => {
+    res.status(404).json({message: "Route not found"})
+})
 
 app.listen(port,()=>{
     connectDb()
