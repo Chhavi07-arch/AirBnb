@@ -61,12 +61,13 @@ function ListingContext({ children }) {
 
   const handleViewCard = async (id) => {
     try {
-      const result = await axios.get(`${serverUrl}/api/listing/findlistingByid/${id}`, { withCredentials: true });
+      const result = await axios.get(`${serverUrl}/api/listing/findlistingbyid/${id}`, { withCredentials: true });
       console.log(result.data);
       setCardDetails(result.data);
       navigate('/viewcard');
     } catch (error) {
       console.error(error);
+      toast.error('Failed to fetch listing details');
     }
   };
 
