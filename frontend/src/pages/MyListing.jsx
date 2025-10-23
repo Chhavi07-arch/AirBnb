@@ -20,22 +20,26 @@ function MyListing() {
         MY LISTING
       </div>
       <div className="w-[100%] h-[90%] flex items-center justify-center gap-[25px] flex-wrap mt-[30px]">
-        {userData.listing.map((list) => (
-          <Card
-            key={list._id} // Added unique key prop
-            title={list.title}
-            landMark={list.landMark}
-            city={list.city}
-            image1={list.image1}
-            image2={list.image2}
-            image3={list.image3}
-            rent={list.rent}
-            id={list._id}
-            isBooked={list.isBooked}
-            ratings={list.ratings}
-            host={list.host}
-          />
-        ))}
+        {userData && userData.listing && userData.listing.length > 0 ? (
+          userData.listing.map((list) => (
+            <Card
+              key={list._id} // Added unique key prop
+              title={list.title}
+              landMark={list.landMark}
+              city={list.city}
+              image1={list.image1}
+              image2={list.image2}
+              image3={list.image3}
+              rent={list.rent}
+              id={list._id}
+              isBooked={list.isBooked}
+              ratings={list.ratings}
+              host={list.host}
+            />
+          ))
+        ) : (
+          <div className="text-[20px] text-[#613b3b] font-semibold">No listings yet</div>
+        )}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { authDataContext } from './AuthContext';
+import { userDataContext } from './UserContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -33,6 +34,7 @@ function ListingContext({ children }) {
 
   const handleAddListing = async () => {
     setAdding(true);
+    const { getCurrentUser } = useContext(userDataContext);
     try {
       const formData = new FormData();
       formData.append('title', title);
@@ -48,6 +50,7 @@ function ListingContext({ children }) {
       const result = await axios.post(`${serverUrl}/api/listing/add`, formData, { withCredentials: true });
       setAdding(false);
       console.log(result);
+      await getCurrentUser(); // Refresh user data to show new listing in My Listings
       navigate('/');
       toast.success('Listing added successfully');
       resetFormFields();
