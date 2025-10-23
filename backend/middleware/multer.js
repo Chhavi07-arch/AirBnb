@@ -1,13 +1,13 @@
 import multer from "multer"
 
-let storage = multer.diskStorage({
-    destination:(req,file,cb)=>{
-        cb(null,"./public")
-    },
-    filename:(req,file,cb)=>{
-        cb(null,file.originalname)
+// Use memory storage instead of disk storage since Render has ephemeral filesystem
+const storage = multer.memoryStorage()
+
+const upload = multer({
+    storage: storage,
+    limits: {
+        fileSize: 50 * 1024 * 1024 // 50MB limit per file
     }
 })
-const upload = multer({storage})
 
 export default upload
