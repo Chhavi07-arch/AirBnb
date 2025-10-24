@@ -1,24 +1,24 @@
-# AirBnb Clone
+# 🏠 AirBnb Clone
 
 A full-stack web application inspired by Airbnb, built with the MERN stack (MongoDB, Express, React, Node.js). This project allows users to browse listings, create their own properties, make bookings, and manage their reservations.
 
-## Live Demo
+## 🚀 Live Demo
 
 Check out the deployed application: https://air-bnb-frontend-sand.vercel.app/
 
-## Features
+## ✨ Features
 
-- **User Authentication**: Secure signup and login using JWT tokens stored in HTTP-only cookies
-- **Browse Listings**: View all available properties with images, pricing, and ratings
-- **Create Listings**: Hosts can add their own properties with multiple images
-- **Book Properties**: Users can book available listings and view booking history
-- **Manage Bookings**: View and cancel bookings with real-time updates
-- **My Listings**: Hosts can see their own properties and cancel bookings
-- **Responsive Design**: Fully responsive UI that works on desktop, tablet, and mobile devices
-- **Image Hosting**: Images are securely stored on Cloudinary
-- **Search Functionality**: Filter and search for properties
+- 🔐 **User Authentication**: Secure signup and login using JWT tokens stored in HTTP-only cookies
+- 🏘️ **Browse Listings**: View all available properties with images, pricing, and ratings
+- ➕ **Create Listings**: Hosts can add their own properties with multiple images
+- 📅 **Book Properties**: Users can book available listings and view booking history
+- ✅ **Manage Bookings**: View and cancel bookings with real-time updates
+- 📌 **My Listings**: Hosts can see their own properties and cancel bookings
+- 📱 **Responsive Design**: Fully responsive UI that works on desktop, tablet, and mobile devices
+- 🖼️ **Image Hosting**: Images are securely stored on Cloudinary
+- 🔍 **Search Functionality**: Filter and search for properties
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 ### Frontend
 - **React 19** - User interface framework
@@ -96,7 +96,7 @@ AirBnb/
     └── .env                 # Environment variables (not in repo)
 ```
 
-## Installation
+## 📦 Installation
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -196,7 +196,7 @@ Update the `serverUrl` in Context files to match your backend URL:
 - `POST /api/booking/add` - Create booking (requires auth)
 - `DELETE /api/booking/:id` - Cancel booking (requires auth)
 
-## How to Use
+## 📖 How to Use
 
 ### 1. Signup / Login
 - Click "Sign Up" to create a new account
@@ -313,7 +313,7 @@ Cookies are configured with:
 4. Deploy! Your backend will be accessible at a public URL
 5. Update frontend's `serverUrl` to point to the deployed backend
 
-## Troubleshooting
+## 🐛 Troubleshooting
 
 ### Issue: "User doesn't have a token"
 **Solution**: Ensure backend cookies are configured with `sameSite: "none"` and `secure: true` for cross-domain requests.
@@ -348,7 +348,7 @@ Cookies are configured with:
 - Input validation is performed on the backend
 - Authentication middleware protects sensitive routes
 
-## Future Enhancements
+## 🚀 Future Enhancements
 
 - Add review and rating system for properties
 - Implement messaging between hosts and guests
@@ -373,4 +373,4 @@ For issues or questions, please check the deployment logs and ensure all environ
 
 ---
 
-Built by Chhavi ✌🏻
+Built by Chhavi ✌🏻 with ❤️
