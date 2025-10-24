@@ -373,4 +373,4 @@ For issues or questions, please check the deployment logs and ensure all environ
 
 ---
 
-Built with React, Express, MongoDB, and Node.js. Happy coding!
+Built by Chhavi ✌🏻
