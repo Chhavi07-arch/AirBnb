@@ -11,10 +11,13 @@ function Home() {
       <Nav />
 
       {/* Hero Section */}
-      <div className="w-[100vw] h-[50vh] bg-gradient-to-b from-[#8b4545] to-[#5c2e2e] relative overflow-hidden mt-[165px]">
-        {/* Background overlay with subtle pattern */}
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-
+      <div
+        className="w-[100vw] h-[50vh] bg-cover bg-center relative overflow-hidden mt-[165px]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(139, 69, 69, 0.6), rgba(92, 46, 46, 0.6)), url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200&h=600&fit=crop')`,
+          backgroundAttachment: 'fixed'
+        }}
+      >
         {/* Hero Content */}
         <div className="relative h-full flex flex-col items-center justify-center text-center px-[20px] z-10">
           <h1 className="text-[42px] md:text-[56px] font-bold text-white mb-[15px] leading-tight">
