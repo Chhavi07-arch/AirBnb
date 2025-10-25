@@ -172,6 +172,9 @@ Update the `serverUrl` in Context files to match your backend URL:
 - Local development: `http://localhost:8000`
 - Production: Your deployed backend URL
 
+<img width="1710" height="947" alt="Screenshot 2025-10-25 at 11 26 27 PM" src="https://github.com/user-attachments/assets/de806279-7ed0-4b73-915b-3e24cd5f36bc" />
+
+
 ## API Endpoints
 
 ### Authentication
@@ -203,15 +206,24 @@ Update the `serverUrl` in Context files to match your backend URL:
 - Provide your email and password
 - Once logged in, you'll have access to all features
 
+  <img width="1694" height="852" alt="Screenshot 2025-10-25 at 11 23 01 PM" src="https://github.com/user-attachments/assets/4bd6c31d-9a25-455a-a201-6bef6945e184" />
+
+
 ### 2. Browse Listings
 - View all available properties on the home page
 - Each card shows the property image, location, price, and ratings
 - Click on a card to view more details
 
+  <img width="1710" height="946" alt="Screenshot 2025-10-25 at 11 23 33 PM" src="https://github.com/user-attachments/assets/680d6f71-60a3-4d14-a461-82154c453ad7" />
+
+
 ### 3. Book a Property
 - Click on a property card to view details
 - Click the "Book Now" button to make a reservation
 - Confirm your booking
+
+<img width="1646" height="914" alt="Screenshot 2025-10-25 at 11 24 27 PM" src="https://github.com/user-attachments/assets/306388b4-35f4-4705-a8be-5ee097d1110a" />
+
 
 ### 4. Create a Listing
 - Click "Add Listing" from the sidebar
@@ -219,13 +231,22 @@ Update the `serverUrl` in Context files to match your backend URL:
 - Upload 3 property images
 - Click "Add Listing" to publish
 
+  <img width="1687" height="908" alt="Screenshot 2025-10-25 at 11 25 02 PM" src="https://github.com/user-attachments/assets/d7eb8be3-37c1-4503-98fa-7182f1f9706c" />
+
+
 ### 5. Manage Your Bookings
 - Go to "My Bookings" to view your reservations
 - Cancel bookings if needed
+<img width="1705" height="785" alt="Screenshot 2025-10-25 at 11 25 34 PM" src="https://github.com/user-attachments/assets/64a86567-426f-43fb-8f08-010c8bfc22f0" />
+
+  
 
 ### 6. Manage Your Listings
 - Go to "My Listings" to view your properties
 - Cancel bookings made on your properties if needed
+<img width="1699" height="852" alt="Screenshot 2025-10-25 at 11 25 58 PM" src="https://github.com/user-attachments/assets/fddb01af-6fc0-463e-9cfb-bbc2ab3d1dff" />
+
+  
 
 ## Database Schema
 
