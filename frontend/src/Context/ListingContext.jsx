@@ -32,10 +32,10 @@ function ListingContext({ children }) {
   const [listingLoading, setListingLoading] = useState(true); // Loading state for listings
 
   const { serverUrl } = useContext(authDataContext);
+  const { getCurrentUser } = useContext(userDataContext);
 
   const handleAddListing = async () => {
     setAdding(true);
-    const { getCurrentUser } = useContext(userDataContext);
     try {
       const formData = new FormData();
       formData.append('title', title);
