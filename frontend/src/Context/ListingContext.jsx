@@ -29,6 +29,7 @@ function ListingContext({ children }) {
   const [cardDetails, setCardDetails] = useState(null);
   const [searchData, setSearchData] = useState([]);
   const [refresh, setRefresh] = useState(false); // Added for better dependency management
+  const [listingLoading, setListingLoading] = useState(true); // Loading state for listings
 
   const { serverUrl } = useContext(authDataContext);
 
@@ -92,11 +93,14 @@ function ListingContext({ children }) {
 
   const getListing = async () => {
     try {
+      setListingLoading(true);
       const result = await axios.get(`${serverUrl}/api/listing/get`, { withCredentials: true });
       setListingData(result.data);
       setNewListData(result.data);
+      setListingLoading(false);
     } catch (error) {
       console.error(error);
+      setListingLoading(false);
     }
   };
 
@@ -162,6 +166,8 @@ function ListingContext({ children }) {
     handleSearch,
     searchData,
     setSearchData,
+    listingLoading,
+    setListingLoading,
   };
 
   return <listingDataContext.Provider value={value}>{children}</listingDataContext.Provider>;

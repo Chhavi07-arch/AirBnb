@@ -45,12 +45,14 @@ export const addListing = async (req,res) => {
 
 export const getListing= async (req,res) => {
     try {
-        let listing = await Listing.find().sort({createdAt:-1})
+        // Using .lean() for read-only queries to improve performance
+        // .lean() returns plain JavaScript objects instead of Mongoose documents
+        let listing = await Listing.find().sort({createdAt:-1}).lean()
         return res.status(200).json(listing)
     } catch (error) {
         return res.status(500).json({message:`getListing error ${error}`})
     }
-    
+
 }
 
 export const findListing= async (req,res) => {
@@ -149,23 +151,24 @@ export const ratingListing = async (req, res) => {
 export const search = async (req,res) => {
     try {
         const { query } = req.query;
-    
+
         if (!query) {
             return res.status(400).json({ message: "Search query is required" });
         }
-    
+
+        // Using .lean() for read-only search queries to improve performance
         const listing = await Listing.find({
             $or: [
                 { landMark: { $regex: query, $options: "i" } },
                 { city: { $regex: query, $options: "i" } },
                 { title: { $regex: query, $options: "i" } },
             ],
-        });
-    
+        }).lean();
+
        return res.status(200).json(listing);
     } catch (error) {
         console.error("Search error:", error);
       return  res.status(500).json({ message: "Internal server error" });
     }
-    }
+}
     

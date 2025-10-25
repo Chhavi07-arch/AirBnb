@@ -7,6 +7,7 @@ import { GiConfirmed } from "react-icons/gi";
 import { FcCancel } from "react-icons/fc";
 import { useState } from 'react';
 import { bookingDataContext } from '../Context/BookingContext';
+import { optimizeCardImage } from '../utils/imageOptimizer';
 
 function Card({ title, landMark, image1, image2, image3, rent, city, id, ratings, isBooked, host }) {
     let navigate = useNavigate()
@@ -34,9 +35,9 @@ function Card({ title, landMark, image1, image2, image3, rent, city, id, ratings
             </div>}
 
             <div className='w-[100%] h-[67%] rounded-t-[16px] overflow-hidden flex '>
-                <img src={image1} alt="" className='w-[100%] flex-shrink-0 object-cover' />
-                <img src={image2} alt="" className='w-[100%] flex-shrink-0 object-cover' />
-                <img src={image3} alt="" className='w-[100%] flex-shrink-0 object-cover' />
+                <img src={optimizeCardImage(image1)} loading="lazy" alt="listing" className='w-[100%] flex-shrink-0 object-cover' />
+                <img src={optimizeCardImage(image2)} loading="lazy" alt="listing" className='w-[100%] flex-shrink-0 object-cover' />
+                <img src={optimizeCardImage(image3)} loading="lazy" alt="listing" className='w-[100%] flex-shrink-0 object-cover' />
 
             </div>
             <div className='w-[100%] h-[33%] px-[16px] py-[16px] flex flex-col gap-[8px] justify-between'>
